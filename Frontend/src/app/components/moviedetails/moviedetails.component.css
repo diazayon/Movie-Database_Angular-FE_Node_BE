@@ -1,0 +1,48 @@
+::ng-deep body {
+    background-color: midnightblue;
+    color: white;
+}
+
+.container {
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+#cast {
+    overflow-x:scroll;
+}
+
+.ellipsistext {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .rating {
+    background-color:black; 
+    display: inline-block;
+    color:white;
+    width: auto;
+    border-radius: 15px;
+    padding: 2px;
+  }
+
+  .padpad {
+    padding: 60px;
+    padding-top: 40px;
+}
+
+::ng-deep a.carousel-control-prev{
+    width:5%
+}
+
+::ng-deep a.carousel-control-next{
+    width:5%
+}
+
+::ng-deep .carousel-inner{
+    max-height: 50%;
+}

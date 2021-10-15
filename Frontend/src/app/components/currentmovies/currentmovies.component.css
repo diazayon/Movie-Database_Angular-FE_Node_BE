@@ -1,0 +1,15 @@
+.card-body {
+    width: 90%;
+    margin:0 auto;
+    background-color:midnightblue;
+
+}
+
+::ng-deep .carousel-inner {
+    
+    overflow-y: hidden;
+}
+
+::ng-deep body {
+    background-color:midnightblue; 
+}

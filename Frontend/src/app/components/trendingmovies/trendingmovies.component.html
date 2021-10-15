@@ -1,0 +1,19 @@
+<div class="card-body">
+    <span style="color:white; font-size:30px;">Trending Movies</span>
+    <ngb-carousel #carousel [interval]="3000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
+        <ng-template ngbSlide *ngFor="let group of postsFormatted">
+            <div class="row">
+                <div class="col-sm-2 mx-0 px-0" *ngFor="let post of group">
+                    <div class="carousel-caption">
+                        <!-- <h3>{{post.title}}</h3> -->
+                    </div>
+                    <a href="https://hw8frontend-310205.wn.r.appspot.com/watch/movie/{{post.id}}" rel="nofollow noopener noreferrer">
+                        <div class="picsum-img-wrapper">
+                        <img src={{post.poster_path}} class="container-fluid">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </ng-template>
+    </ngb-carousel>
+</div>

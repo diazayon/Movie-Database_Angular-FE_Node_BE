@@ -1,0 +1,35 @@
+::ng-deep .navbar {
+    background-color: black;
+    color: white;
+}
+
+.navbar-brand  {
+    color: white;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-form-control{
+    background-color: darkblue;
+}
+#typeahead-http {
+    background-color: black;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-color: white;
+}
+::ng-deep .dropdown-menu {
+    background-color: #040625  !important;;
+    color: white  !important;;
+}
+
+::ng-deep .dropdown-item {
+    color: white  !important;;
+}
+
+.dropdown-item.active {
+    background-color:white;
+}

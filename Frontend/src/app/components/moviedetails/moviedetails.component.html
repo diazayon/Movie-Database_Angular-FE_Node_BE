@@ -1,0 +1,93 @@
+<div class="container">
+    <div class="row">
+        <div class="col embed-responsive embed-responsive-16by9">
+            <iframe [src]='safeURL' frameborder="0" allowfullscreen></iframe>
+            
+        </div>
+        <div class="col">
+            <h1>{{posts.title}}<br></h1>
+            <i>{{posts.tagline}}<br></i>
+            <b>Genres: </b><span *ngFor="let post of posts.genres">{{post.name}}, </span><br>
+            <b>Spoken Languages: </b><span *ngFor="let post of posts.spoken_languages">{{post.english_name}}, </span><br>
+            {{posts.release_date | date: "yyyy"}}  |  {{posts.vote_average}}  |  {{posts.runtime}} minutes<br>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <p>{{posts.overview}}</p>
+</div>
+
+<div id="cast" class="container">
+    <span style="font-size:30px;">Full Cast and Crew</span><br>
+        <div class="row flex-row flex-nowrap">
+            <div class="col-md-2" *ngFor="let post of casts">
+                <div class="card card-block" style="color:black; text-align:center; width:100%;">
+                    <img class="card-img-top" src={{post.profile_path}} alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{post.name}}</h5>
+                        <span class="card-text">AS</span><br>
+                        <span class="card-text">{{post.character}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+    <h2>Reviews &nbsp;<span style="color:grey;">{{reviewscount}}</span></h2>
+        <div class="card mb-3" *ngFor="let review of reviews" style="color:black; width:100%">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-10">
+                    <div class="card-body">
+                        <h5>A review created by {{review.author}} <div class="rating">&nbsp;&#9733;&nbsp;{{review.rating}}&nbsp;</div></h5><br>
+                        <p style="color:grey;">Written by {{review.author}} on {{review.created_at | date:'medium'}}</p>
+                        <p><span class="ellipsistext">{{review.content}}</span></p>
+                        <a href="{{review.url}}">Read the rest</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+<br>
+<br>
+<div class="container">
+    <span style="color:white; font-size:30px;">Recommended Movies</span>
+    <ngb-carousel #carousel [interval]="3000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
+        <ng-template ngbSlide *ngFor="let group of recommendsFormatted">
+            <div class="row padpad">
+                <div class="col-sm-2 mx-0 px-0" *ngFor="let post of group">
+                    <a href="https://hw8frontend-310205.wn.r.appspot.com/watch/movie/{{post.id}}" rel="nofollow noopener noreferrer">
+                        <div class="picsum-img-wrapper">
+                        <img src={{post.poster_path}} class="container-fluid">
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </ng-template>
+    </ngb-carousel>
+</div>
+<br>
+<br>
+<div class="container">
+    <span style="color:white; font-size:30px;">Similar Movies</span>
+    <ngb-carousel #carousel [interval]="3000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
+        <ng-template ngbSlide *ngFor="let group of similarsFormatted">
+            <div class="row padpad">
+                <div class="col-sm-2 mx-0 px-0" *ngFor="let post of group">
+                    <a href="https://hw8frontend-310205.wn.r.appspot.com/watch/movie/{{post.id}}" rel="nofollow noopener noreferrer">
+                        <div class="picsum-img-wrapper">
+                        <img src={{post.poster_path}} class="container-fluid">
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </ng-template>
+    </ngb-carousel>
+</div>
