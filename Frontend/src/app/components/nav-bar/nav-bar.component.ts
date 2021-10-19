@@ -3,7 +3,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable, of, OperatorFunction} from 'rxjs';
 import {catchError, debounceTime, distinctUntilChanged, map, tap, switchMap} from 'rxjs/operators';
 
-const WIKI_URL = 'https://hw8backend-310205.wn.r.appspot.com/query/';
+const WIKI_URL = 'http://localhost:8080/query/';
 const PARAMS = new HttpParams({
   fromObject: {
     action: 'opensearch',
